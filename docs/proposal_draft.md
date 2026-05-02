@@ -1,36 +1,35 @@
-# Project Proposal: Solving Fluid Dynamics with Physics-Informed Neural Networks (PINNs)
+# Project Proposal: Solving Fluid Dynamics with Physics-Informed Neural Networks
 
-## 1. Problem Background & Motivation
+## Problem Background & Motivation
 
-In many engineering and physical science fields, understanding fluid dynamics is very important. Traditionally, people use numerical methods like Computational Fluid Dynamics (CFD) to solve complex Partial Differential Equations (PDEs), such as the Navier-Stokes equations. However, these traditional methods have two main problems: first, they need very complex mesh generation which takes a lot of computational time; second, when we only have a small amount of real-world sensor data, it is hard for traditional solvers to use this sparse data effectively.
+In the first five weeks of this course, we have learned a lot about standard deep learning models like CNNs and Transformers. We saw how good they are at finding patterns in data. However, we noticed a problem: these models don't actually "know" any physics. If we try to use a normal neural network to predict something physical, like how water flows or how heat spreads, it might give us an answer that looks okay but completely violates the laws of physics.
 
-Recently, deep learning has shown great power, but standard neural networks (like CNNs or LSTMs) only learn from data and do not "know" the laws of physics. This is where Physics-Informed Neural Networks (PINNs) come in. As we learned in Week 8 of this course, PINNs can embed physical equations directly into the neural network's loss function. This means the network is forced to follow the rules of physics during training. 
+Looking at the syllabus, we saw that Part 2 of the course is about "Machine Learning for Physical Applications." We got really curious about how we can force a neural network to obey physical rules. We decided to read ahead a bit and found out about Physics-Informed Neural Networks (PINNs). 
 
-Our motivation for this project is to explore how PINNs can act as a "mesh-free" solver for fluid dynamics. We want to see if we can use a modern framework (like `pinns-torch`) to solve the Navier-Stokes equations faster and more easily than traditional methods. Since this course focuses on Machine Learning for Physical Applications (Part 2), we believe studying PINNs is a perfect fit to connect deep learning with real-world physical rules.
+Our motivation for this project is to get a head start on this exciting topic. We want to see if we can use a neural network to simulate fluid dynamics (specifically, the Navier-Stokes equations). Normally, traditional numerical solvers can be computationally expensive. We want to find out if PINNs can do it faster and easier, and we want to learn how to actually write the code for it before we learn the deep theory in class.
 
-## 2. Related Work
+## Related Work
 
-Instead of just listing papers, we organize the related research into two main themes that are closely related to our project:
+When we were looking for ideas, we found a lot of papers. We tried to organize the research we found into two main themes that make sense to us right now:
 
-**Theme 1: Deep Learning for Physical Systems and PDEs**
-In recent years, researchers have tried to use machine learning to model physical systems. For example, Neural ODEs (which we learned in Week 6) treat hidden layers as continuous time steps to model dynamic systems. Another approach is Neural Operators (like FNO in Week 7), which learn mappings between infinite-dimensional function spaces. While these methods are powerful, they often require a huge amount of pre-computed simulation data to train. In contrast, our project focuses on PINNs, which do not need massive external datasets because they use the PDE itself to guide the learning process.
+**Theme 1: Standard Deep Learning vs. Physics-Based Models**
+Most of the models we learned so far (like basic feedforward networks) just try to make the output match the training data. But for physical problems, getting enough training data from real experiments is too expensive. We saw that researchers are trying different things to fix this. For example, Neural ODEs try to model continuous time. But PINNs seem more direct to us because they just add the physics equation straight into the loss function. This means the model gets penalized if it breaks the laws of physics, which we think is a really clever idea.
 
-**Theme 2: The Development and Acceleration of PINNs**
-The foundational idea of PINNs was introduced by Raissi et al. (2019), who showed that neural networks can solve forward and inverse PDE problems by adding the PDE residual to the loss function. However, early PINNs built on TensorFlow v1 were sometimes slow to train. Recently, the `pinns-torch` framework (Akbarian & Raissi, 2023) was developed to solve this speed issue. By using PyTorch and CUDA Graphs, it can train models much faster. Our project will build directly on this newer, faster framework to see how well it works in practice.
+**Theme 2: Making PINNs Actually Run Fast**
+We read the original paper that introduced PINNs (Raissi et al., 2019). It sounded great, but earlier implementations were reported to be slow in practice. Then, we found a newer open-source project called `pinns-torch` (Akbarian & Raissi, 2023). This project rewrote everything in PyTorch (which we are more comfortable with) and used something called CUDA Graphs to make it run much faster. This makes it possible for us to actually do this project without needing a massive supercomputer.
 
-## 3. High-level Methodology
+## High-level Methodology
 
-To achieve our goal, we plan to reproduce and experiment with the Navier-Stokes example using the `pinns-torch` framework. Our methodology is broken down into three main steps:
+Our main goal is to use the `pinns-torch` library to solve a fluid dynamics problem and see how it works. Here is our plan:
 
-**Step 1: Problem Setup and Data Generation**
-We will focus on a classic 2D fluid problem: the unsteady wake flow behind a cylinder. Instead of downloading gigabytes of external simulation data, we will use the framework's `MeshSampler`. This tool will automatically sample "collocation points" (random points in space and time) and boundary/initial condition points directly from the defined physical domain. 
+**1. Setting up the Problem:**
+Instead of trying to invent a new physics problem, we will use the classic Navier-Stokes example provided in the `pinns-torch` repository. The cool thing about PINNs is that we don't need to download a huge dataset. The library has a `MeshSampler` that will automatically generate random points (collocation points) in our simulation area to train the network.
 
-**Step 2: Model Architecture and Training**
-We will build a Fully Connected Network (FCN). The inputs will be spatial coordinates ($x, y$) and time ($t$), and the outputs will be the velocity fields ($u, v$) and pressure ($p$). The core of our method is the loss function. The loss will be calculated by combining two parts: 
-1. The Data Loss (how well the model matches the initial and boundary conditions).
-2. The Physics Loss (how well the outputs satisfy the Navier-Stokes PDE equations, calculated using automatic differentiation).
+**2. Training the Model:**
+We will train a Fully Connected Network. The inputs will be the coordinates ($x, y$) and time ($t$), and it will try to predict the fluid velocity and pressure. We will let the library calculate the PDE loss (to make sure it follows Navier-Stokes) and the boundary loss.
 
-**Step 3: Experiments and Evaluation**
-First, we will run the baseline model to make sure we can successfully reproduce the fluid flow visualization. After that, we plan to do some simple optimizations. We will change the number of training points (`n_train`) and the number of epochs to see how they affect the final error (MSE) and the training time. 
+**3. Our Experiment:**
+Once we get the baseline code running and can see the fluid visualization, we want to do some experiments. We plan to change some simple parameters in the configuration file, like the number of training points (`n_train`) or the number of layers in the network. We want to record how these changes affect the training time and the final error. We want to see if we can make it train faster without losing too much accuracy.
 
-**Fallback Plan:** If the Navier-Stokes equations are too hard to train on our laptops or take too much time, we will switch to a simpler 1D problem, like the Schrödinger equation or Burgers' equation, which are also supported by the framework. This ensures we can definitely finish the project by the end of the term.
+**Fallback Plan:**
+We are a bit worried that the Navier-Stokes equations might still be too heavy for our computers to train in time for the final deadline. If we get stuck and it takes too long, we will switch to a simpler 1D problem, like the Schrodinger equation. The `pinns-torch` library has a simple Jupyter Notebook tutorial for this, so we know we can definitely get it working as a backup plan.
