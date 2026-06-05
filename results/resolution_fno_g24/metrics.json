@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.08043601363897324,
+  "rel_l2_v": 0.07864154130220413,
+  "rel_l2_p": 0.11417199671268463,
+  "model": "fno",
+  "run_name": "resolution_fno_g24",
+  "n_obs": 4096,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 3000,
+  "train_seconds": 16.313947600021493,
+  "peak_gpu_mb": 55.79638671875,
+  "lambda_1": null,
+  "lambda_2": null,
+  "lambda_1_abs_error": null,
+  "lambda_2_abs_error": null,
+  "pde_residual_mse": null,
+  "continuity_mse": null
+}

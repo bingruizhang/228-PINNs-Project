@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.06966231763362885,
+  "rel_l2_v": 0.06288681924343109,
+  "rel_l2_p": 0.25609728693962097,
+  "lambda_1": 0.49481701850891113,
+  "lambda_2": 0.01610247977077961,
+  "lambda_1_abs_error": 0.5051829814910889,
+  "lambda_2_abs_error": 0.0061024797707796095,
+  "pde_residual_mse": 0.1307508647441864,
+  "continuity_mse": 0.01864137314260006,
+  "model": "siren",
+  "run_name": "data_siren_n500",
+  "n_obs": 500,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 3000,
+  "train_seconds": 39.92864759999793,
+  "peak_gpu_mb": 127.4951171875
+}

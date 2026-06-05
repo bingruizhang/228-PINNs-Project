@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 1.007845401763916,
+  "rel_l2_v": 0.9956516027450562,
+  "rel_l2_p": 1.0216214656829834,
+  "lambda_1": 0.5000180602073669,
+  "lambda_2": 0.019979771226644516,
+  "lambda_1_abs_error": 0.49998193979263306,
+  "lambda_2_abs_error": 0.009979771226644516,
+  "pde_residual_mse": 0.011644371785223484,
+  "continuity_mse": 0.0003337245143484324,
+  "model": "residual",
+  "run_name": "smoke_residual",
+  "n_obs": 512,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 20,
+  "train_seconds": 0.5427427999966312,
+  "peak_gpu_mb": 19.8740234375
+}

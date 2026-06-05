@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.026792919263243675,
+  "rel_l2_v": 0.018797824159264565,
+  "rel_l2_p": 0.07502848654985428,
+  "lambda_1": 0.9855010509490967,
+  "lambda_2": 0.008639181964099407,
+  "lambda_1_abs_error": 0.01449894905090332,
+  "lambda_2_abs_error": 0.001360818035900593,
+  "pde_residual_mse": 0.0004394241841509938,
+  "continuity_mse": 7.964657561387867e-05,
+  "model": "deep_fcn",
+  "run_name": "arch_deep_fcn",
+  "n_obs": 5000,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 4000,
+  "train_seconds": 85.2592747999879,
+  "peak_gpu_mb": 275.61572265625
+}

@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.9976606369018555,
+  "rel_l2_v": 1.0046905279159546,
+  "rel_l2_p": 0.9998984336853027,
+  "lambda_1": 0.5064892768859863,
+  "lambda_2": 0.019647987559437752,
+  "lambda_1_abs_error": 0.49351072311401367,
+  "lambda_2_abs_error": 0.009647987559437752,
+  "pde_residual_mse": 0.0072296615689992905,
+  "continuity_mse": 0.00027420761762186885,
+  "model": "fcn",
+  "run_name": "smoke_fcn",
+  "n_obs": 512,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 20,
+  "train_seconds": 0.41420800000196323,
+  "peak_gpu_mb": 18.83984375
+}

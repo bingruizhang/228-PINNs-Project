@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 1.007483959197998,
+  "rel_l2_v": 1.0003628730773926,
+  "rel_l2_p": 0.9794664978981018,
+  "lambda_1": 0.4950551390647888,
+  "lambda_2": 0.019635671749711037,
+  "lambda_1_abs_error": 0.5049448609352112,
+  "lambda_2_abs_error": 0.009635671749711036,
+  "pde_residual_mse": 0.03337353840470314,
+  "continuity_mse": 0.0018658030312508345,
+  "model": "fourier",
+  "run_name": "smoke_fourier",
+  "n_obs": 512,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 20,
+  "train_seconds": 0.598367300000973,
+  "peak_gpu_mb": 20.18505859375
+}

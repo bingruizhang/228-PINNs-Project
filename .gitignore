@@ -165,9 +165,13 @@ cython_debug/
 .cursor/
 
 # Data and models
-data/
+data/*
+!data/
+!data/README.md
+!data/taylor_green_sample.npz
 models/
 *.pt
+!results/**/*.pt
 *.pth
 *.ckpt
 

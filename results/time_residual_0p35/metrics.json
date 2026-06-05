@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.021192720159888268,
+  "rel_l2_v": 0.018790485337376595,
+  "rel_l2_p": 0.0856931209564209,
+  "lambda_1": 0.9758613109588623,
+  "lambda_2": 0.013784343376755714,
+  "lambda_1_abs_error": 0.024138689041137695,
+  "lambda_2_abs_error": 0.003784343376755714,
+  "pde_residual_mse": 0.00374819478020072,
+  "continuity_mse": 0.00032846612157300115,
+  "model": "residual",
+  "run_name": "time_residual_0p35",
+  "n_obs": 5000,
+  "noise_std": 0.0,
+  "train_t_max": 0.35,
+  "steps": 3000,
+  "train_seconds": 61.17731249998906,
+  "peak_gpu_mb": 243.3642578125
+}

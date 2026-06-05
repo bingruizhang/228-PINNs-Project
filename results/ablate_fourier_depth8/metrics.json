@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.16178995370864868,
+  "rel_l2_v": 0.11672324687242508,
+  "rel_l2_p": 0.09224211424589157,
+  "lambda_1": 0.33353379368782043,
+  "lambda_2": 0.013385173864662647,
+  "lambda_1_abs_error": 0.6664662063121796,
+  "lambda_2_abs_error": 0.003385173864662647,
+  "pde_residual_mse": 4.883911609649658,
+  "continuity_mse": 0.22374162077903748,
+  "model": "fourier",
+  "run_name": "ablate_fourier_depth8",
+  "n_obs": 5000,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 3000,
+  "train_seconds": 108.57526670000516,
+  "peak_gpu_mb": 208.0146484375
+}

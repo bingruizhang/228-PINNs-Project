@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 1.0002623796463013,
+  "rel_l2_v": 0.9999191761016846,
+  "rel_l2_p": 1.012568712234497,
+  "model": "fno",
+  "run_name": "smoke_fno",
+  "n_obs": 4096,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 20,
+  "train_seconds": 0.31207200000062585,
+  "peak_gpu_mb": 22.2041015625,
+  "lambda_1": null,
+  "lambda_2": null,
+  "lambda_1_abs_error": null,
+  "lambda_2_abs_error": null,
+  "pde_residual_mse": null,
+  "continuity_mse": null
+}

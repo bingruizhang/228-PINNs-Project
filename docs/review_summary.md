@@ -18,7 +18,7 @@
 *   **Perspective:** Must be written from the perspective of a student currently in Week 5.
 *   **Tone:** "Naive" and exploratory. It must sound like a student curious about upcoming topics, not an expert who has already mastered them.
 *   **Pronouns:** Must use "we" as the primary pronoun.
-*   **AI Artifacts:** Must strictly avoid overly professional, grandiose, or typical "AI-generated" phrasing.
+*   **Style constraints:** Must strictly avoid overly professional or grandiose phrasing.
 
 ---
 

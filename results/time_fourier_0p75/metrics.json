@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.07383309304714203,
+  "rel_l2_v": 0.07169569283723831,
+  "rel_l2_p": 0.09911046177148819,
+  "lambda_1": 0.33605051040649414,
+  "lambda_2": 0.011368093080818653,
+  "lambda_1_abs_error": 0.6639494895935059,
+  "lambda_2_abs_error": 0.001368093080818653,
+  "pde_residual_mse": 1.7698677778244019,
+  "continuity_mse": 0.052311334758996964,
+  "model": "fourier",
+  "run_name": "time_fourier_0p75",
+  "n_obs": 5000,
+  "noise_std": 0.0,
+  "train_t_max": 0.75,
+  "steps": 3000,
+  "train_seconds": 88.66302899998846,
+  "peak_gpu_mb": 304.34765625
+}

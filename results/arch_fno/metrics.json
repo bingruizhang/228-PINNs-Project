@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.020014315843582153,
+  "rel_l2_v": 0.020435389131307602,
+  "rel_l2_p": 0.03144626319408417,
+  "model": "fno",
+  "run_name": "arch_fno",
+  "n_obs": 5000,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 4000,
+  "train_seconds": 21.749649100005627,
+  "peak_gpu_mb": 69.01318359375,
+  "lambda_1": null,
+  "lambda_2": null,
+  "lambda_1_abs_error": null,
+  "lambda_2_abs_error": null,
+  "pde_residual_mse": null,
+  "continuity_mse": null
+}

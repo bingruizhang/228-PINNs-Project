@@ -1,0 +1,19 @@
+{
+  "rel_l2_u": 0.8778364062309265,
+  "rel_l2_v": 0.8123693466186523,
+  "rel_l2_p": 0.9449564218521118,
+  "lambda_1": 0.49913227558135986,
+  "lambda_2": 0.019875507801771164,
+  "lambda_1_abs_error": 0.5008677244186401,
+  "lambda_2_abs_error": 0.009875507801771164,
+  "pde_residual_mse": 6.51541805267334,
+  "continuity_mse": 0.2687435746192932,
+  "model": "siren",
+  "run_name": "smoke_siren",
+  "n_obs": 512,
+  "noise_std": 0.0,
+  "train_t_max": 1.0,
+  "steps": 20,
+  "train_seconds": 0.45852169999852777,
+  "peak_gpu_mb": 19.11328125
+}
